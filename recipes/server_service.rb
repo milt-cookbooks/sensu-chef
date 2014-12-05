@@ -20,6 +20,7 @@
 
 
 sensu_service "sensu-server" do
+  ignore_failure node.sensu.ignore_start_failure
   init_style node.sensu.init_style
   action [:enable, :start]
 end
